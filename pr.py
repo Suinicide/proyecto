@@ -1,12 +1,10 @@
 import os
 
-# Constantes para los archivos de datos
 ARCHIVO_ESTUDIANTES = 'estudiantesfull.txt'
 ARCHIVO_ASIGNATURAS = 'asignaturas.txt'
 ARCHIVO_CARRERAS = 'carreras.txt'
 ARCHIVO_NOTAS = 'notas.txt'
 
-# Función principal del menú
 def menu():
     while True:
         print("\nSistema Académico")
@@ -33,7 +31,6 @@ def menu():
         else:
             print("Opción no válida, intente de nuevo.")
 
-# Función para cargar archivos planos de texto
 def cargar_archivos():
     cargar_estudiantes()
     cargar_asignaturas()
@@ -72,7 +69,6 @@ def cargar_notas():
     else:
         print("Archivo de notas no encontrado.")
 
-# Función para crear y almacenar datos en archivos planos de texto
 def crear_datos():
     while True:
         print("\nCrear y almacenar datos")
@@ -138,7 +134,6 @@ def crear_datos_notas():
         file.write(f"{codigo_estudiante},{id_asignatura},{cantidad_notas}," + ",".join(notas) + "\n")
     print("Notas registradas.")
 
-# Función para calcular la nota definitiva de un estudiante en una asignatura
 def calcular_nota_definitiva():
     codigo_estudiante = input("Ingrese el código del estudiante: ")
     id_asignatura = input("Ingrese el identificador de la asignatura: ")
@@ -158,7 +153,6 @@ def calcular_nota_definitiva():
     else:
         print("Archivo de notas no encontrado.")
 
-# Función para calcular el promedio del semestre de un estudiante
 def calcular_promedio_semestre():
     codigo_estudiante = input("Ingrese el código del estudiante: ")
 
@@ -197,7 +191,6 @@ def calcular_promedio_semestre():
         else:
             print("No se encontraron créditos para las asignaturas del estudiante")
 
-# Función para calcular el promedio de los promedios del semestre para todos los estudiantes de una carrera
 def calcular_promedio_carrera():
     id_carrera = input("Ingrese el identificador de la carrera: ")
 
@@ -272,6 +265,5 @@ def calcular_promedio_carrera():
     else:
         print("Archivos de estudiantes, notas o asignaturas no encontrados.")
 
-# Ejecutar el menú principal
 if __name__ == '__main__':
     menu()
